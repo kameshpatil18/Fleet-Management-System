@@ -1,0 +1,18 @@
+services:
+  server:
+    build: .
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - mysqldb
+  mysqldb:
+    image: "mysql:latest"
+    restart: always
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_DATABASE: Project_v3
+      MYSQL_USER: root
+      MYSQL_PASSWORD: Kamesh@18
+      MYSQL_ROOT_PASSWORD: Kamesh@18
